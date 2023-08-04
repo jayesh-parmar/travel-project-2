@@ -1,0 +1,98 @@
+{{-- <x-guest-layout>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+
+        <!-- Name -->
+        <div>
+            <x-input-label for="name" :value="__('Name')" />
+            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        </div>
+
+        <!-- Email Address -->
+        <div class="mt-4">
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
+
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Password')" />
+
+            <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="new-password" />
+
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mt-4">
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+
+            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                            type="password"
+                            name="password_confirmation" required autocomplete="new-password" />
+
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+                {{ __('Already registered?') }}
+            </a>
+
+            <x-primary-button class="ml-4">
+                {{ __('Register') }}
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout> --}}
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration or Sign Up  </title> 
+    <link rel="stylesheet" href="css/form/style.css">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+      <div class="input-box">
+        <input type="text" name="name" :value="old('name')" required autofocus autocomplete="name"  placeholder="Enter your name" >
+      </div>
+      <x-input-error :messages="$errors->get('name')" class="mt-2" />
+      <div class="input-box">
+        <input  type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="Enter your email" >
+      </div>
+      <x-input-error :messages="$errors->get('email')" class="mt-2" />
+      <div class="input-box">
+        <input type="password" placeholder="Create password" type="password" name="password" required autocomplete="new-password" >
+      </div>
+      <x-input-error :messages="$errors->get('password')" class="mt-2" />
+      <div class="input-box">
+        <input  placeholder="Confirm password" type="password" name="password_confirmation" required autocomplete="new-password" >
+      </div>
+      <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+      <div class="policy">
+        <input type="checkbox">
+        <h3>I accept all terms & condition</h3>
+      </div>
+      <div class="input-box button">
+        {{-- <input type="Submit" value="Register Now"> --}}
+        <button class="btn btn-primary">Register Now</button>
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="{{ route('login') }}">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
